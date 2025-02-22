@@ -7,7 +7,7 @@ const GuessMap = ({ onGuessSubmit }) => {
   const [markerPosition, setMarkerPosition] = useState([43.9159, 17.6791]); // Default Bosnia coords
 
   const crosshairIcon = new L.Icon({
-    iconUrl: "/crosshair.svg", // Reference to the SVG in the public folder
+    iconUrl: "/crosshair-guess.svg", // Reference to the SVG in the public folder
     iconSize: [20, 20], // Size of the crosshair
     iconAnchor: [10, 10], // Center the icon on the map
     popupAnchor: [0, 0],
