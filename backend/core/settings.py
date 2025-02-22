@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import environ
 import os
+from datetime import timedelta
+
 
 # Initialize environment variables
 
@@ -198,3 +200,9 @@ LOGGING = {
 
 AUTH_USER_MODEL = 'app.User'
 APPEND_SLASH=False
+
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=7),  # Set access token lifetime to 7 days
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # Set refresh token lifetime to 30 days
+}
