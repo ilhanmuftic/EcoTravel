@@ -1,0 +1,43 @@
+.leaderboard-container {
+    background-color: #312b48;
+    color: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: auto;
+    flex: 1; /* Makes them take up equal space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Adjust as needed */
+    align-items: center; /* Adjust as needed */
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .leaderboard-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #4b4b81;
+  }
+  
+  .rank {
+    font-weight: bold;
+    color: gold;
+  }
+  
+  .username {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .score {
+    color: #d3d3d3;
+  }
+  

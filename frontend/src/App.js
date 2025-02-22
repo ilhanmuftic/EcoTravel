@@ -8,6 +8,9 @@ import PreviewLocation from "./components/PreviewLocation";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Make sure this is imported!
 import LoginPage from "./components/LoginPage";
+import Leaderboard from "./components/Leaderboard";
+import Recommendations from "./components/Recommendations";
+import RegisterPage from "./components/Register";
 
 
 const App = () => {
@@ -16,7 +19,21 @@ const App = () => {
     <Router>
       {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={<div><Navbar /></div>}/>
+      <Route path="/" element={
+    <div style={{
+        display: 'flex', 
+        flexDirection: 'row', 
+        height: '100vh', // Full height
+        width: '100vw',  // Full width
+        overflow: 'hidden'
+    }}>
+        <Navbar />
+        <Recommendations />
+        <Leaderboard />
+
+    </div>
+}/>
+
         <Route
           path="/play"
           element={<Game />}
@@ -25,6 +42,7 @@ const App = () => {
         <Route path="/profile" element={<Account />} />  
         <Route path="/preview" element={<PreviewLocation />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
 
       </Routes>
       <ToastContainer 

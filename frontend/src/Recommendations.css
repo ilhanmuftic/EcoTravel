@@ -1,0 +1,39 @@
+.recommendations-container {
+    background-color: #2c2c56;
+    color: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: auto;
+    flex: 1; /* Makes them take up equal space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Adjust as needed */
+    align-items: center; /* Adjust as needed */
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+
+
+  .recommendations-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .recommendation-item {
+    padding: 10px;
+    border-bottom: 1px solid #4b4b81;
+  }
+  
+  .rec-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .rec-description {
+    font-size: 14px;
+    color: #d3d3d3;
+  }
+  
