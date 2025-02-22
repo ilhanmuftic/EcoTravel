@@ -1,1 +1,1 @@
-Backend for GreenScout.
+Backend for ecotravel.

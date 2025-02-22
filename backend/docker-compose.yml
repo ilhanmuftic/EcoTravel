@@ -18,7 +18,7 @@ services:
         - DB_HOST=${DB_HOST}       # Uses DB_HOST from .env
         - DB_PORT=${DB_PORT}       # Uses DB_PORT from .env
     networks:
-      - greenscout-network
+      - ecotravel-network
 
   db:
     image: postgres:13
@@ -29,12 +29,12 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     networks:
-      - greenscout-network
+      - ecotravel-network
     ports:
       - "5432:5432"  # Expose the database to the host
 
 networks:
-  greenscout-network:
+  ecotravel-network:
     driver: bridge
 
 volumes:

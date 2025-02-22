@@ -20,7 +20,7 @@ services:
       - DB_HOST=${DB_HOST}       
       - DB_PORT=${DB_PORT}       
     networks:
-      - greenscout-network
+      - ecotravel-network
     restart: unless-stopped
 
   db:
@@ -32,7 +32,7 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     networks:
-      - greenscout-network
+      - ecotravel-network
     restart: unless-stopped
 
   react-app:
@@ -52,11 +52,11 @@ services:
     depends_on:
       - backend
     networks:
-      - greenscout-network
+      - ecotravel-network
     restart: unless-stopped        
 
 networks:
-  greenscout-network:
+  ecotravel-network:
     driver: bridge
 
 volumes:
