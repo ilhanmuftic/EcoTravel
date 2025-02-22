@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'rest_framework_simplejwt',
     'core',
     'app'
 ]
@@ -169,6 +170,12 @@ REST_FRAMEWORK = {
     ],
         
     'EXCEPTION_HANDLER': 'app.utils.handlers.custom_exception_handler',
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
 
 }
 
@@ -187,3 +194,7 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
+
+
+AUTH_USER_MODEL = 'app.User'
+APPEND_SLASH=False
