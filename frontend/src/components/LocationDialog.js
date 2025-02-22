@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify'; // Importing toast from react-toastify
 import 'react-toastify/dist/ReactToastify.css'; // Importing the CSS for toast notifications
+import { fetchWithAuth } from '../utils/fetch';
 
 const LocationDialog = ({ closeDialog, lat, lng }) => {
   const [cityName, setCityName] = useState('');
@@ -16,7 +17,7 @@ const LocationDialog = ({ closeDialog, lat, lng }) => {
     const payload = { lat, lng, city: cityName, name: locationName };
 
     try {
-      const response = await fetch(`${apiUrl}/locations`, {
+      const response = await fetchWithAuth(`${apiUrl}/api/locations/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

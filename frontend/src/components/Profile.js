@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "../Profile.css";
+import Navbar from './Navbar';
 
 const Profile = () => {
   return (
     <div className = "profile-main">
+    <Navbar />
     <section className="profile-container">
       {/* Left Section: Sidebar with Profile */}
       <div className="profile-sidebar">
@@ -22,7 +24,9 @@ const Profile = () => {
         <div className="profile-links">
           <Link to="/account" className="profile-link">Account</Link>
           <Link to="/settings" className="profile-link">Settings</Link>
+          <Link to="/login" className="profile-link">Log In</Link>
           <Link to="/logout" className="profile-link">Log Out</Link>
+
         </div>
       </div>
       

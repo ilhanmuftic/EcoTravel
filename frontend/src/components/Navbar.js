@@ -34,7 +34,7 @@ const Navbar = () => {
         </div>
         <a href="/" className="navbar-logo-link">
           <img src="/favicon.ico" alt="Logo" className="navbar-logo" />
-          <p className="navbar-name">GeoGuessrBosnia</p>
+          <p className="navbar-name">EcoTravel</p>
         </a>
       </div>
 
@@ -43,7 +43,9 @@ const Navbar = () => {
         <div className="bars-dropdown">
           <ul>
             <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/homescreen">Home Screen</Link></li>
+            <li><Link to="/">Home Screen</Link></li>
+            <li><Link to="/login">Log In</Link></li>
+
           </ul>
         </div>
       )}
@@ -51,7 +53,7 @@ const Navbar = () => {
       {/* Center Section: Links */}
       <ul className="navbar-links">
         <li>
-          <Link to="/" className="full-box-link">Play</Link>
+          <Link to="/play" className="full-box-link">Play</Link>
         </li>
         <li>
           <Link to="/about" className="full-box-link">About Us</Link>
@@ -84,6 +86,9 @@ const Navbar = () => {
               </li>
               <li>
                 <Link to="/settings">Settings</Link>
+              </li>
+              <li>
+                <Link to="/login">Log In</Link>
               </li>
               <hr />
               <li onClick={handleLogout}>

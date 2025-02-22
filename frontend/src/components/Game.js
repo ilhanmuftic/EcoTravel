@@ -1,10 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef }  from "react";
 import StreetView from "./StreetView";
 import GuessMap from "./GuessMap";
+import ResultsPopup from "./ResultsPopup";
+import { calculateScore } from "../utils/score";
+import Navbar from "./Navbar";
+import { getRandomLocation } from "../utils/randomLocation";
+import { getDistance } from "../utils/distance";
 
-const Game = ({ handleGuessSubmit, location }) => {
+const Game = ({ }) => {
   const [userGuess, setUserGuess] = useState(null); // Track user's guess
-  console.log("LOCATION", location, location.lat)
+  const hasRun = useRef(false);
+  const [showResults, setShowResults] = useState(false);
+  const [location, setLocation] = useState(null);
+  const [lastGuess, setLastGuess] = useState(null);
+  const [score, setScore] = useState(0);
+
+
+  useEffect(() => {
+  
+      const fetchLocation = async () => {
+        const randomLocation = await getRandomLocation(); // Await the result
+        setLocation(randomLocation); // Set it after the promise resolves
+      };
+  
+      if (!hasRun.current) {
+        fetchLocation()
+        hasRun.current = true;
+      }
+    }, []);
+
+    
+
+  const handleGuessSubmit = async (guessCoords) => {
+    const [lat, lng] = guessCoords;
+    const distance = getDistance(location, { lat, lng });
+
+    const points = calculateScore(distance)
+
+    setScore((prevScore) => prevScore + points);
+    setLastGuess({ guess: [lat, lng], actual: location, distance });
+
+    setShowResults(true);
+
+    const currentLocation = await getRandomLocation();
+    setLocation(currentLocation);
+    
+  };
+
+  const closeResults = () => {
+    setShowResults(false);
+  };
 
   return (
     <div
@@ -22,6 +67,7 @@ const Game = ({ handleGuessSubmit, location }) => {
       }}
       
     >
+      <Navbar />
       {/* Left Side: Street View */}
       <div
         style={{
@@ -73,6 +119,16 @@ const Game = ({ handleGuessSubmit, location }) => {
         </div>
 
       </div>
+
+
+      <ResultsPopup
+        show={showResults}
+        onClose={closeResults}
+        guess={lastGuess?.guess}
+        actual={lastGuess?.actual}
+        distance={lastGuess?.distance}
+        score={score}
+      />
     </div>
   );
 };

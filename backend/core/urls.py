@@ -4,5 +4,5 @@ from django.urls import path, include, re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),        # Admin interface
-    re_path('', include('app.urls')), # Routes to the app's URLs
+    re_path('api/', include('app.urls')), # Routes to the app's URLs
 ]

@@ -1,8 +1,9 @@
 /* General Styling for Profile Page */
 .profile-main{
   background-color: #1e1e2f;
-  height: 90.8vh;
+  height: 91.29vh;
   width: 100%;
+  padding-top: 70px
 }
 
 .profile-container {
