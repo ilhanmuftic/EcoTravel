@@ -1,5 +1,6 @@
 import React from "react";
 import "../AboutUs.css"; 
+import Navbar from "../components/Navbar"
 
 const AboutUs = () => {
   return (
@@ -13,6 +14,7 @@ const AboutUs = () => {
         minHeight: "100vh",
       }}
     >
+      <Navbar />
       <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "left" }}>
         {/* Title */}
         <h1 className="hover-underline" style={{ color: "white", fontSize: "2.5rem", marginBottom: "20px" }}>

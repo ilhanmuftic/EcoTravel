@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import StreetView from './StreetView'; // Assuming this is your StreetView component
 import LocationDialog from './LocationDialog'; // The dialog box component
+import Navbar from './Navbar';
 
 // TODO Rename this to add location
 const PreviewLocation = () => {
@@ -40,6 +41,7 @@ const PreviewLocation = () => {
 
   return (
     <div style={styles.container}>
+      <Navbar />
       <div style={styles.streetViewContainer}>
         <StreetView key={locationKey} lat={lat} lng={lng} />
       </div>

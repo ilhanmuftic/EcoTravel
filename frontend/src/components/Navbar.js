@@ -51,7 +51,7 @@ const Navbar = () => {
       {/* Center Section: Links */}
       <ul className="navbar-links">
         <li>
-          <Link to="/" className="full-box-link">Play</Link>
+          <Link to="/game" className="full-box-link">Play</Link>
         </li>
         <li>
           <Link to="/about" className="full-box-link">About Us</Link>

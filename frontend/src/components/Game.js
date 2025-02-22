@@ -1,28 +1,27 @@
 import React, { useState } from "react";
+import { useLocation } from "../LocationContext";
 import StreetView from "./StreetView";
 import GuessMap from "./GuessMap";
+import Navbar from "./Navbar";
 
-const Game = ({ handleGuessSubmit, location }) => {
-  const [userGuess, setUserGuess] = useState(null); // Track user's guess
-  console.log("LOCATION", location, location.lat)
+const Game = () => {
+  const { location, gameOver, handleGuessSubmit } = useLocation();
+  const [userGuess, setUserGuess] = useState(null);
 
   return (
     <div
-    
       style={{
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
         height: "100vh",
-        backgroundColor: "#1e1e2f", // Modern dark background
+        backgroundColor: "#1e1e2f",
         color: "white",
         padding: "20px",
         boxSizing: "border-box",
       }}
-      
     >
-      {/* Left Side: Street View */}
       <div
         style={{
           flex: 1,
@@ -41,7 +40,6 @@ const Game = ({ handleGuessSubmit, location }) => {
         )}
       </div>
 
-      {/* Right Side: Map and Button */}
       <div
         style={{
           flex: 0.6,
@@ -66,12 +64,11 @@ const Game = ({ handleGuessSubmit, location }) => {
         >
           <GuessMap
             onGuessSubmit={(guessCoords) => {
-              handleGuessSubmit(guessCoords); // Submit guess and pass to parent
-              setUserGuess(guessCoords); // Track guess locally
+              handleGuessSubmit(guessCoords);
+              setUserGuess(guessCoords);
             }}
           />
         </div>
-
       </div>
     </div>
   );
