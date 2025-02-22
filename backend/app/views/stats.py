@@ -50,7 +50,7 @@ class LeaderboardView(APIView):
             for entry in leaderboard
         ]
 
-        return Response({"leaderboard": top_players}, status=status.HTTP_200_OK)
+        return Response(top_players, status=status.HTTP_200_OK)
     
 
 class PostRatingView(APIView):

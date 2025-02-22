@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { fetchWithAuth } from '../utils/fetch'; // Make sure to import the fetch function
 import "../Recommendations.css";
+import StreetView from './StreetView';
 
 const Recommendations = () => {
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(true); // To handle loading state
   const [error, setError] = useState(null); // To handle any errors
   const API_URL = process.env.REACT_APP_API_URL;
+
+  const handleRecommendationClick = (locationName, lat, lng) => {
+    // URL for Google Street View, replace lat and lng with actual values
+    const streetViewURL = `https://www.google.com/maps?q=${lat},${lng}&ll=${lat},${lng}&z=14&layer=c&cbll=${lat},${lng}&cbp=12,0,0,0,0`;
+    window.open(streetViewURL, '_blank'); // Open in a new tab
+  };
 
   // Fetch data on component mount
   useEffect(() => {
@@ -29,7 +36,6 @@ const Recommendations = () => {
     };
   
     fetchRecommendations();
-    console.log("Recommendations 2: ", recommendations)
   }, []); // Empty dependency array ensures this runs only once when the component mounts
 
   useEffect(() => {
@@ -46,12 +52,13 @@ const Recommendations = () => {
 
   return (
     <div className="recommendations-container">
-      <h2>Recommendations</h2>
       <ul className="recommendations-list">
         {recommendations.map((rec, index) => (
-          <li key={index} className="recommendation-item">
+          <li key={index} className="recommendation-item" onClick={() => handleRecommendationClick(rec.location_name, rec.location_lat, rec.location_lng)}>
             <h3 className="rec-title">{rec.location_name}</h3>
             <p className="rec-description">{rec.description}</p>
+            <StreetView lat={rec.location_lat} lng={rec.location_lng} />
+
           </li>
         ))}
       </ul>

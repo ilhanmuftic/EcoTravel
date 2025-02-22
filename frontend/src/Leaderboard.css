@@ -6,7 +6,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     margin: auto;
-    flex: 1; /* Makes them take up equal space */
+    flex: 0.5; /* Makes them take up equal space */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Adjust as needed */
@@ -30,6 +30,7 @@
   .rank {
     font-weight: bold;
     color: gold;
+    margin-right: 10px;
   }
   
   .username {
@@ -39,5 +40,6 @@
   
   .score {
     color: #d3d3d3;
+    margin-left: 5px;
   }
   

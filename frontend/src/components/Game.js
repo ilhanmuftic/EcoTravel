@@ -133,7 +133,7 @@ const Game = ({ }) => {
         actual={lastGuess?.actual}
         distance={lastGuess?.distance}
         score={score}
-        location_id={location.id}
+        location_id={location?.id}
       />
     </div>
   );

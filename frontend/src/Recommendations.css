@@ -9,11 +9,12 @@
     flex: 1; /* Makes them take up equal space */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Adjust as needed */
-    align-items: center; /* Adjust as needed */
     height: 100vh;
     overflow-y: auto;
-  }
+    margin-top: 70px;  
+    padding-right: 80px;
+
+}
 
 
 
@@ -25,6 +26,7 @@
   .recommendation-item {
     padding: 10px;
     border-bottom: 1px solid #4b4b81;
+    cursor: pointer;
   }
   
   .rec-title {
@@ -37,3 +39,32 @@
     color: #d3d3d3;
   }
   
+  /* Custom scrollbar for the entire platform */
+::-webkit-scrollbar {
+  width: 12px; /* Set width for vertical scrollbar */
+  height: 12px; /* Set height for horizontal scrollbar */
+}
+
+/* Scrollbar track (background) */
+::-webkit-scrollbar-track {
+  background: #1f1f3d; /* Dark background */
+  border-radius: 10px;
+  margin: 4px;
+}
+
+/* Scrollbar handle (thumb) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #6a5acd, #ff6347); /* Gradient color for the thumb */
+  border-radius: 10px;
+  border: 2px solid #fff; /* Border around the thumb */
+}
+
+/* Scrollbar handle hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff6347, #6a5acd); /* Change gradient on hover */
+}
+
+/* Scrollbar corner (where vertical and horizontal scrollbars meet) */
+::-webkit-scrollbar-corner {
+  background: #1f1f3d;
+}
