@@ -14,7 +14,7 @@ urlpatterns = [
     re_path('score/?$', PostScoreView.as_view(), name="score"),
     re_path('leaderboard/?$', LeaderboardView.as_view(), name='leaderboard'),
     path('rate-location/', PostRatingView.as_view(), name='rate-location'),
-        path('top-location/', TopRatedLocationsView.as_view(), name='rate-location'),
+    path('top-location/', TopRatedLocationsView.as_view(), name='rate-location'),
 
 
 ]

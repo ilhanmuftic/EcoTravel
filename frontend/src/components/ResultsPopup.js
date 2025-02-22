@@ -3,6 +3,10 @@ import { MapContainer, TileLayer, Marker, Polyline } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { getDistance } from "../utils/distance";
+import { fetchWithAuth } from '../utils/fetch';
+import { toast } from 'react-toastify'; // Importing toast from react-toastify
+import 'react-toastify/dist/ReactToastify.css'; // Importing the CSS for toast notifications
+
 
 // Custom icon for map markers
 const locationIcon = new L.Icon({
@@ -17,12 +21,28 @@ const locationGuessIcon = new L.Icon({
     iconAnchor: [15, 20],
 });
 
-const ResultsPopup = ({ show, onClose, guess, actual, score }) => {
+const ResultsPopup = ({ show, onClose, guess, actual, score, location_id }) => {
     const [rating, setRating] = useState(0); // Store selected rating
+    const API_URL = process.env.REACT_APP_API_URL;
 
     if (!show) return null;
 
-    const distance = getDistance({ lat: guess[0], lng: guess[1] }, actual);
+    // const distance = getDistance({ lat: guess[0], lng: guess[1] }, actual);
+
+
+  const handleSubmit = async (star) => {
+    try {
+      const data = await fetchWithAuth(`${API_URL}/api/rate-location/`, {
+        method: 'POST',
+        body: JSON.stringify({
+            rating: star,
+            location: location_id, // Sending the location along with the rating
+          }),      });
+
+          toast.success("Rating submitted successfully!");    } catch (error) {
+            toast.error("Something went wrong. Please try again.");
+        }
+  };
 
     return (
         <div style={styles.popupContainer}>
@@ -38,24 +58,30 @@ const ResultsPopup = ({ show, onClose, guess, actual, score }) => {
                 </div>
                 <h3 style={styles.text}>Score: {score}</h3>
                 {/* <p style={styles.text}>Distance: {distance.toFixed(2)} km</p> */}
-                Eco Friendly Rating <br />
 
                 {/* Star Rating System */}
+                { score>=4000?
                 <div style={styles.ratingContainer}>
+                    Eco Friendly Rating <br />
+
                     {[1, 2, 3, 4, 5].map((star) => (
-                        <span
+                        <span 
                             key={star}
                             style={{
                                 ...styles.star,
                                 color: star <= rating ? '#aaffaa' : '#555',
                             }}
-                            onClick={() => setRating(star)}
+                            onClick={() => {
+                                setRating(star); // Set the rating
+                                handleSubmit(star); // Immediately submit the rating
+                              }}                            
                         >
                             ★
                         </span>
                     ))}
-                </div>
 
+             
+            </div> : null} 
 
                 <button style={styles.closeButton} onClick={onClose}>
                     Close
@@ -119,6 +145,7 @@ const styles = {
         cursor: 'pointer',
         margin: '0 5px',
     },
+
 };
 
 export default ResultsPopup;

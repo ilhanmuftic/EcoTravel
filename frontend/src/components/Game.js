@@ -6,6 +6,7 @@ import { calculateScore } from "../utils/score";
 import Navbar from "./Navbar";
 import { getRandomLocation } from "../utils/randomLocation";
 import { getDistance } from "../utils/distance";
+import { fetchWithAuth } from "../utils/fetch";
 
 const Game = ({ }) => {
   const [userGuess, setUserGuess] = useState(null); // Track user's guess
@@ -14,6 +15,7 @@ const Game = ({ }) => {
   const [location, setLocation] = useState(null);
   const [lastGuess, setLastGuess] = useState(null);
   const [score, setScore] = useState(0);
+  const API_URL = process.env.REACT_APP_API_URL;
 
 
   useEffect(() => {
@@ -37,11 +39,14 @@ const Game = ({ }) => {
 
     const points = calculateScore(distance)
 
-    setScore((prevScore) => prevScore + points);
+    setScore(points);
     setLastGuess({ guess: [lat, lng], actual: location, distance });
 
     setShowResults(true);
 
+    fetchWithAuth(`${API_URL}/api/score/`, {
+      method: 'POST',
+      body: JSON.stringify({score}),      })
     const currentLocation = await getRandomLocation();
     setLocation(currentLocation);
     
@@ -128,6 +133,7 @@ const Game = ({ }) => {
         actual={lastGuess?.actual}
         distance={lastGuess?.distance}
         score={score}
+        location_id={location.id}
       />
     </div>
   );

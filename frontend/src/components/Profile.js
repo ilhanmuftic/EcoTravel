@@ -25,7 +25,6 @@ const Profile = () => {
           <Link to="/account" className="profile-link">Account</Link>
           <Link to="/settings" className="profile-link">Settings</Link>
           <Link to="/login" className="profile-link">Log In</Link>
-          <Link to="/logout" className="profile-link">Log Out</Link>
 
         </div>
       </div>

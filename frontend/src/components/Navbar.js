@@ -16,11 +16,6 @@ const Navbar = () => {
     setDropdownOpen(!dropdownOpen); // Toggle bars dropdown
   };
 
-  const handleLogout = () => {
-    console.log("Logged out!");
-    // Add logout functionality here
-  };
-
   return (
     <nav className="navbar">
       {/* Left Section: Logo and Title */}
@@ -87,13 +82,12 @@ const Navbar = () => {
               <li>
                 <Link to="/settings">Settings</Link>
               </li>
+              <hr />
+
               <li>
                 <Link to="/login">Log In</Link>
               </li>
-              <hr />
-              <li onClick={handleLogout}>
-                <a href="#">Log Out</a>
-              </li>
+
             </ul>
           </div>
         )}

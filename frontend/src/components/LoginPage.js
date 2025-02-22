@@ -27,7 +27,7 @@ const LoginPage = () => {
       if (response.ok) {
         console.log("TOKEN", data.access)
         localStorage.setItem("authToken", data.access); // Save token
-        navigate("/profile"); // Redirect to profile page
+        navigate("/"); // Redirect to profile page
       } else {
         setError(data.message || "Invalid login credentials");
       }
