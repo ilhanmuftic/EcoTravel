@@ -56,6 +56,7 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 1000,
+        color: 'black'
     },
     popup: {
         background: '#fff',
