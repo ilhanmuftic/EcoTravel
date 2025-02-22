@@ -35,8 +35,6 @@ venv.bak/
 # Node.js
 node_modules/
 
-# .env file
-.env
 
 # MacOS
 .DS_Store
