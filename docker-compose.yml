@@ -4,7 +4,6 @@ services:
   backend:
     build:
       context: ./backend  # Path to backend directory
-    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./backend:/app  # Mount only the backend directory
     ports:
@@ -33,6 +32,8 @@ services:
       - db-data:/var/lib/postgresql/data
     networks:
       - ecotravel-network
+    ports:
+      - "5432:5432"  
     restart: unless-stopped
 
   react-app:

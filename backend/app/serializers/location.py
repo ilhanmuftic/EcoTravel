@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from app.models import Location
+from app.models import Location, LocationRating
 from app.constants.validation import MAX_LAT, MAX_LNG, MIN_LAT, MIN_LNG
 from app.utils.handlers import WrapperException
 from app.constants.error import LOCATION_ALREADY_EXISTS
@@ -8,10 +8,17 @@ import logging
 logger = logging.getLogger(__name__)
 
 class LocationSerializer(serializers.ModelSerializer):
+    average_rating = serializers.SerializerMethodField()
+
     class Meta:
         model = Location
-        fields = '__all__'
+        fields = "__all__" 
 
+    def get_average_rating(self, obj):
+        return obj.average_rating
+
+
+    
 class CreateLocationSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=255)
     lat = serializers.FloatField()

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
     'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
@@ -181,6 +182,10 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',  # If you use django-filter
+        'rest_framework.filters.OrderingFilter',  # Enable OrderingFilter
+    ),
 
 }
 
@@ -202,7 +207,6 @@ LOGGING = {
 
 
 # AUTH_USER_MODEL = 'app.User'
-APPEND_SLASH=False
 
 
 SIMPLE_JWT = {
