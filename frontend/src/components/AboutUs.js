@@ -23,9 +23,7 @@ const AboutUs = () => {
 
         {/* Welcome Text */}
         <p style={{ fontSize: "1.1rem", marginBottom: "20px", color: "white" }}>
-          Welcome to <strong>GeoGuessrBosnia</strong>, a fun and educational game
-          that lets you explore the beautiful landscapes, cities, and hidden
-          gems of Bosnia and Herzegovina.
+          Welcome to <strong>EcoTravel</strong>, an exciting and eco-friendly initiative combining technology, tourism, and environmental awareness. 
         </p>
 
         {/* Project History */}
@@ -33,50 +31,40 @@ const AboutUs = () => {
           Our Story
         </h2>
         <p style={{ fontSize: "1.1rem", marginBottom: "20px" ,color: "white"}}>
-          Our project started in <strong>December 2024</strong> as part of our
-          Computer Science studies at SSST in Sarajevo. As passionate students
-          and proud explorers of our homeland, we wanted to create something
-          that combines technology, geography, and fun.
+          Our project, <strong>EcoTravel</strong>, began during the <strong>Hackathon</strong> event in February 2025. As a team of passionate tech enthusiasts and advocates for eco-friendly tourism, we saw an opportunity to blend gaming, geography, and environmental consciousness in a meaningful way.
         </p>
 
-        {/* Who We Are */}
+        {/* Our Approach */}
         <h2 className="hover-underline" style={{ color: "white", fontSize: "2rem", marginTop: "30px" }}>
-          Who We Are
+          Our Approach
         </h2>
         <p style={{ fontSize: "1.1rem", marginBottom: "20px" ,color: "white"}}>
-          We are a team of Computer Science students who believe in making
-          learning about Bosnia and Herzegovina both interactive and exciting.
-          By showcasing real locations, we aim to help people discover the
-          country’s unique culture, history, and scenery—whether they're locals
-          or visitors.
+          We aim to build a unique platform where users can guess locations in Bosnia and Herzegovina while evaluating their eco-friendliness. Using a combination of Google ratings and an eco scale, we provide a rating system that guides users to the most sustainable and eco-friendly tourist destinations in the region.
         </p>
 
-        {/* Ambition Section */}
+        {/* Key Features */}
         <h2 className="hover-underline"style={{ color: "white", fontSize: "2rem", marginTop: "30px" ,color: "white"}}>
-          Our Ambition
+          Key Features
         </h2>
         <p style={{ fontSize: "1.1rem", marginBottom: "20px" ,color: "white"}}>
-          Our goal is to develop a platform that not only entertains but also
-          educates. Through <strong>GeoGuessrBosnia</strong>, we hope to:
+          Our platform includes three categories based on ratings and eco-friendliness:
         </p>
         <ul style={{ marginLeft: "20px", fontSize: "1.1rem" ,color: "white"}}>
-          <li>Highlight the beauty of Bosnia and Herzegovina.</li>
-          <li>
-            Encourage curiosity about local geography and culture.
-          </li>
-          <li>
-            Inspire learning and exploration through innovative technology.
-          </li>
+          <li><strong>High Rating + High Eco</strong> = Recommended (Great for users)</li>
+          <li><strong>High/Mid Rating + Low/Mid Eco</strong> = High Touristic Potential (Perfect for NGOs, tourist agencies, eco agencies, and governments)</li>
+          <li><strong>Low Rating + Low Eco</strong> = Hazard (A concern for eco NGOs and governments)</li>
         </ul>
+
+        <p style={{ fontSize: "1.1rem", marginBottom: "20px" ,color: "white"}}>
+          Additionally, we take into account factors such as air quality in cities, making our recommendations more informed and aligned with eco-friendly values.
+        </p>
 
         {/* Closing Message */}
         <p style={{ fontSize: "1.1rem", marginTop: "20px" ,color: "white"}}>
-          This is just the beginning, and we look forward to expanding our
-          platform with more features, challenges, and surprises as we grow.
-          Thank you for joining us on this journey.
+          Our mission is to help you discover the best sustainable travel spots while making a positive impact on the environment. As we grow, we aim to include more features, user feedback, and environmental data for a more robust experience.
         </p>
 
-        <p class="center-underline"
+        <p className="center-underline"
           style={{
             fontSize: "1.2rem",
             fontWeight: "bold",
@@ -85,7 +73,7 @@ const AboutUs = () => {
             color: "white",
           }}
         >
-          – The GeoGuessrBosnia Team
+          – The EcoTravelBiH Team
         </p>
       </div>
     </div>

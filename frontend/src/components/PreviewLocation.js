@@ -32,6 +32,8 @@ const PreviewLocation = () => {
         setLng(newLng);
         setLocationKey(prevKey => prevKey + 1); // Trigger StreetView re-render
       }
+
+      console.log(newLat, newLng)
     }
   };
 
@@ -79,12 +81,12 @@ const styles = {
   container: {
     display: 'flex',
     flexDirection: 'column',
-    height: '88.7vh',
+    height: '86.32vh',
     backgroundColor: '#1e1e2f', // Modern dark background
     color: '#fff',
     padding: '20px',
     textAlign: 'center',
-    paddingTop: '70px'
+    paddingTop: '90px'
   },
   streetViewContainer: {
     flex: 1,
