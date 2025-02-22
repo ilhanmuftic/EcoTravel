@@ -1,0 +1,63 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend  # Path to backend directory
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/app  # Mount only the backend directory
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - ./backend/.env  
+    environment:
+      - DB_NAME=${DB_NAME}       
+      - DB_USER=${DB_USER}       
+      - DB_PASSWORD=${DB_PASSWORD}  
+      - DB_HOST=${DB_HOST}       
+      - DB_PORT=${DB_PORT}       
+    networks:
+      - greenscout-network
+    restart: unless-stopped
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=${DB_NAME}       
+      - POSTGRES_USER=${DB_USER}     
+      - POSTGRES_PASSWORD=${DB_PASSWORD}  
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - greenscout-network
+    restart: unless-stopped
+
+  react-app:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    env_file:
+      - ./frontend/.env  
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app  # Mount only the frontend directory
+      - /app/node_modules # Prevent overwriting node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - NODE_ENV=development
+    depends_on:
+      - backend
+    networks:
+      - greenscout-network
+    restart: unless-stopped        
+
+networks:
+  greenscout-network:
+    driver: bridge
+
+volumes:
+  db-data:

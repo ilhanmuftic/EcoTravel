@@ -1,0 +1,42 @@
+.hover-underline {
+    position: relative; 
+    display: inline-block;
+    cursor: default;
+  }
+  
+  .hover-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.7s ease;
+  }
+  
+  .hover-underline:hover::after {
+    width: 100%;
+  }
+
+  .center-underline {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .center-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transform: translateX(-50%);
+    transition: width 0.7s ease;
+  }
+  
+  .center-underline:hover::after {
+    width: 100%;
+  }

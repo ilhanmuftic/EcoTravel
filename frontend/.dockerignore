@@ -1,0 +1,26 @@
+# Ignore node_modules and dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Build output
+build
+dist
+
+# Logs
+*.log
+*.log.*
+
+# OS/Editor files
+.DS_Store
+*.swp
+*.swo
+*.idea
+*.vscode
+*.env.local
+.env.*
+!.env.production # Keep production environment files if needed
+
+# Git
+.git
+.gitignore
