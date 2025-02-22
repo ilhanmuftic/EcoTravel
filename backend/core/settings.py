@@ -142,7 +142,9 @@ ALLOWED_HOSTS = [
     'asistentica.online',
     '127.0.0.1',  # Include localhost for internal access
     'www.asistentica.online',
-    'localhost'
+    'localhost',
+    '164.90.227.98',
+    '*'
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -150,6 +152,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000',  # Include this if you're accessing via IP
     'https://asistentica.online',  # Your deployed frontend
     'https://www.asistentica.online',  # Include 'www' if applicable
+    'http://164.90.227.98',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
