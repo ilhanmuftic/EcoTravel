@@ -1,6 +1,7 @@
 from django.urls import re_path, path
 from app.views import OkView, LocationListView, RandomLocationView, RegisterUser,  \
-    LoginUser, LocationRetrieveUpdateDeleteView, PostScoreView, LeaderboardView, PostRatingView, TopRatedLocationsView
+    LoginUser, LocationRetrieveUpdateDeleteView, PostScoreView, LeaderboardView, PostRatingView, TopRatedLocationsView, \
+    UserProfileView
 from rest_framework_simplejwt.views import TokenRefreshView
 
 urlpatterns = [
@@ -15,6 +16,7 @@ urlpatterns = [
     re_path('leaderboard/?$', LeaderboardView.as_view(), name='leaderboard'),
     path('rate-location/', PostRatingView.as_view(), name='rate-location'),
     path('top-locations/', TopRatedLocationsView.as_view(), name='rate-location'),
+    path('user-profile/', UserProfileView.as_view(), name='user-profile'),
 
 
 ]

@@ -73,7 +73,7 @@ const Navbar = () => {
                 alt="User"
                 className="dropdown-profile-picture"
               />
-              <div className="dropdown-username">Otorina</div>
+              <div className="dropdown-username">User</div>
             </div>
             <ul className="dropdown-menu">
               <li>
