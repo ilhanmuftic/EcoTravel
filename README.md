@@ -1,7 +1,7 @@
 # **EcoTravel - Hakaton Projekat** 🌍🚀  
 
 ## **Opis Projekta**  
-**EcoTravel** je web aplikacija koja omogućava korisnicima da istraže i organizuju ekološki prihvatljiva putovanja. Projekat je razvijen koristeći moderne tehnologije i u potpunosti je **dockerizovan**, čime se olakšava razvoj, testiranje i deploy.  
+**EcoTravel** je web aplikacija koja omogućava korisnicima da istraže i organizuju ekološki prihvatljiva putovanja kroz igru GeoGuessrBosnia. Projekat je razvijen koristeći moderne tehnologije i u potpunosti je **dockerizovan**, čime se olakšava razvoj, testiranje i deploy.  
 
 ---
 
