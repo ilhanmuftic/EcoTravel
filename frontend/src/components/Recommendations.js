@@ -54,9 +54,8 @@ const Recommendations = () => {
     <div className="recommendations-container">
       <ul className="recommendations-list">
         {recommendations.map((rec, index) => (
-          <li key={index} className="recommendation-item" onClick={() => handleRecommendationClick(rec.location_name, rec.location_lat, rec.location_lng)}>
-            <h3 className="rec-title">{rec.location_name}</h3>
-            <p className="rec-description">{rec.description}</p>
+          <li key={index} className="recommendation-item">
+            <h3 className="rec-title" onClick={() => handleRecommendationClick(rec.location_name, rec.location_lat, rec.location_lng)}>{rec.location_name}</h3>
             <StreetView lat={rec.location_lat} lng={rec.location_lng} />
 
           </li>

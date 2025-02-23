@@ -39,7 +39,7 @@ class LeaderboardView(APIView):
         # Aggregate scores per user
         leaderboard = Score.objects.values('user') \
             .annotate(total_score=Sum('score')) \
-            .order_by('-total_score')[:3]  # Get top 3 players by total score
+            .order_by('-total_score')[:5]  # Get top 3 players by total score
 
         # Prepare the response data
         top_players = [

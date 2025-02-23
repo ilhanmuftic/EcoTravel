@@ -32,7 +32,7 @@ const RegisterPage = () => {
 
       if (response.ok) {
         localStorage.setItem("authToken", data.access); // Save token
-        navigate("/"); // Redirect to login page after registration
+        navigate("/play"); // Redirect to login page after registration
       } else {
         setError(data.message || "Registration failed");
       }

@@ -79,9 +79,6 @@ const Navbar = () => {
               <li>
                 <Link to="/profile">Account</Link>
               </li>
-              <li>
-                <Link to="/settings">Settings</Link>
-              </li>
               <hr />
 
               <li>
