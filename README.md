@@ -87,4 +87,46 @@ EcoTravel je **skalabilno i efikasno rešenje** za promovisanje ekološki prihva
 
 Nadamo se da će naš projekat doprineti **podizanju svesti o održivom putovanju**! 🌿✨  
 
+## **API Rute**  
+
+Aplikacija koristi **Django REST Framework** za backend API. Svi API-jevi su dokumentovani u **Postman kolekciji**, uključujući testove za validaciju funkcionalnosti.  
+
+### **📌 Autentifikacija**  
+- `POST /register/` → Registracija korisnika  
+- `POST /login/` → Prijava korisnika  
+- `POST /token/refresh/` → Osvježavanje JWT tokena  
+
+### **📌 Lokacije**  
+- `GET /locations/` → Lista svih lokacija  
+- `GET /locations/<id>/` → Detalji, ažuriranje ili brisanje određene lokacije  
+- `GET /random-location/` → Dohvatanje nasumične lokacije  
+
+### **📌 Rezultati i Rangiranje**  
+- `POST /score/` → Slanje rezultata  
+- `GET /leaderboard/` → Dohvatanje leaderboard-a (rang liste)  
+
+### **📌 Ocjenjivanje Lokacija**  
+- `POST /rate-location/` → Ocjenjivanje određene lokacije  
+- `GET /top-locations/` → Prikaz najbolje ocijenjenih lokacija  
+
+### **📌 Korisnički Profil**  
+- `GET /user-profile/` → Pregled korisničkog profila  
+
+---
+
+## **📸 Screenshotovi Aplikacije**  
+
+Evo nekoliko prikaza aplikacije u akciji:  
+
+### **🔹 Početna Stranica**  
+![Screenshot 1](putanja_do_slike_1)  
+
+### **🔹 Lista Lokacija**  
+![Screenshot 2](putanja_do_slike_2)  
+
+### **🔹 Stranica sa Detaljima Lokacije**  
+![Screenshot 3](putanja_do_slike_3)  
+
+(Slike zameni stvarnim putanjama ili ih dodaj u README kao lokalne slike.)
+
 📌 **Tim EcoTravel** 🚀
