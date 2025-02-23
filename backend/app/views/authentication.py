@@ -20,7 +20,16 @@ class RegisterUser(APIView):
         if not username or not password:
             raise WrapperException(USERNAME_PASSWORD_REQUIRED)
         user = User.objects.create_user(username=username, password=password, email=email)
-        return Response({"message": "User created successfully"}, status=status.HTTP_201_CREATED)
+
+        # Generate JWT Token
+        refresh = RefreshToken.for_user(user)
+        access_token = str(refresh.access_token)
+
+        return Response({
+            "message": "User created successfully",
+            "access": access_token,
+            "refresh": str(refresh)
+        }, status=status.HTTP_201_CREATED)
 
 
 class LoginUser(APIView):

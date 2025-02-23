@@ -31,7 +31,8 @@ const RegisterPage = () => {
       const data = await response.json();
 
       if (response.ok) {
-        navigate("/login"); // Redirect to login page after registration
+        localStorage.setItem("authToken", data.access); // Save token
+        navigate("/"); // Redirect to login page after registration
       } else {
         setError(data.message || "Registration failed");
       }
