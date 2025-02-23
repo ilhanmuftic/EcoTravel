@@ -114,19 +114,4 @@ Aplikacija koristi **Django REST Framework** za backend API. Svi API-jevi su dok
 
 ---
 
-## **📸 Screenshotovi Aplikacije**  
-
-Evo nekoliko prikaza aplikacije u akciji:  
-
-### **🔹 Početna Stranica**  
-![Screenshot 1](putanja_do_slike_1)  
-
-### **🔹 Lista Lokacija**  
-![Screenshot 2](putanja_do_slike_2)  
-
-### **🔹 Stranica sa Detaljima Lokacije**  
-![Screenshot 3](putanja_do_slike_3)  
-
-(Slike zameni stvarnim putanjama ili ih dodaj u README kao lokalne slike.)
-
 📌 **Tim EcoTravel** 🚀
