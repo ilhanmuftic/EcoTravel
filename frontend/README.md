@@ -1,71 +1,79 @@
-# Getting Started with Create React App
+##1. Početna stranica
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Na početnoj stranici prikazuju se najpopularnije lokacije, odnosno one s najvišim kombinovanim Google ratingom i našim internim „eko“ ratingom. Ova stranica omogućava korisnicima da:
 
-## Available Scripts
+Pregledaju destinacije: Lokacije su sortirane prema ocjeni, što olakšava pronalaženje najkvalitetnijih i najodrživijih mjesta.
+Istraže destinacije: Ponuđene su osnovne informacije, recenzije i ocjene o lokacijama.
+Započnu igru: Klikom na opciju „Play“ prelazi se na stranicu igre pogađanja lokacija.
+Napomena: Kombinacija Google ocjene i „eko“ ocjene određuje redoslijed prikaza, tako da se najkvalitetnije destinacije prikazuju na vrhu.
 
-In the project directory, you can run:
+##2. Play stranica
 
-### `npm start`
+Na Play stranici korisnici imaju jedinstveno interaktivno iskustvo pogađanja lokacija:
 
-Runs the app in the development mode.\
-You first need to run npm install to install all dependencies!
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Panoramski prikaz (lijevi dio ekrana):
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Prikazuje se 360° prikaz lokacije pomoću tehnologije slične Google Street View-u.
+Korisnik može rotirati, zumirati i „šetati“ kroz okolinu kako bi detaljno istražio/la mjesto.
+Interaktivna mapa i dugme „Guess“ (desni dio ekrana):
 
-### `npm test`
+Na interaktivnoj karti korisnik označava svoju procjenu gdje misli da se lokacija nalazi.
+Klikom na „Guess“ potvrđuje se odabir, a sistem izračunava bodove na osnovu udaljenosti između odabrane tačke i stvarne lokacije.
+Bodovanje i „eko“ rating:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ako je odabrana tačka dovoljno blizu stvarnoj lokaciji, smatra se da korisnik dobro poznaje mjesto.
+U tom slučaju, korisnik dobija mogućnost da dodijeli „eko“ rating toj lokaciji, čime aktivno doprinosi ocjeni njene ekološke prihvatljivosti.
+Ova stranica nudi zabavno, edukativno i interaktivno iskustvo, potičući korisnike da saznaju više o prirodnim i kulturnim znamenitostima Bosne i Hercegovine.
 
-### `npm run build`
+##3. O nama
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Na stranici „O nama“ korisnici mogu saznati više o projektu i njegovim temeljima:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Naša priča:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Objašnjava se kako je EcoTravel nastao tokom hackathon događaja, kao rezultat ideje da se spoje turizam, tehnologija i ekološka osviještenost.
+Naš pristup:
 
-### `npm run eject`
+Objašnjava se filozofija spajanja Google ocjena s internim „eko“ ratingom te kako ta kombinacija pomaže u promociji održivog turizma.
+Ključne funkcionalnosti:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Predstavljene su glavne značajke platforme, uključujući pogađanje lokacija, interaktivne mape, panoramske prikaze i mogućnost dodavanja novih destinacija.
+Misija i vizija:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Cilj je edukacija korisnika i poticanje održivih putovanja, uz kontinuirani razvoj platforme kroz povratne informacije zajednice.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##4. Dodavanje lokacije
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Na stranici za dodavanje lokacije korisnici imaju mogućnost doprinosa zajednici dodavanjem novih lokacija:
 
-## Learn More
+Unos Google Maps linka:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Korisnik unosi URL lokacije sa Google Maps-a u predviđeno polje.
+Nakon unosa, automatski se prikazuje Street View prikaz te lokacije, što omogućava provjeru ispravnosti unosa.
+Dugme „Post Location“:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Klikom na ovo dugme, lokacija se dodaje u bazu podataka.
+Nakon dodavanja, nova destinacija postaje vidljiva na početnoj stranici, gdje je ostali korisnici mogu istraživati i ocjenjivati.
+Ovim načinom korisnici direktno doprinose rastu baze ekološki prihvatljivih destinacija u Bosni i Hercegovini.
 
-### Code Splitting
+##5. Korisnički profil
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Stranica korisničkog profila omogućava korisnicima pregled i uređivanje osnovnih podataka svog naloga:
 
-### Analyzing the Bundle Size
+Profilna slika i ime:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Prikazuje se profilna fotografija ili avatar zajedno s korisničkim imenom.
+Detalji naloga:
 
-### Making a Progressive Web App
+Email adresa: Koristi se kao kontakt podatak i način prijave.
+Korisničko ime: Vidljivo je na platformi.
+Score (bodovi): Prikazuje ukupni broj bodova koje je korisnik prikupio kroz igru pogađanja lokacija.
+Ova stranica omogućava personalizirano iskustvo i pruža uvid u postignuća korisnika.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+##6. Korisnički meni
 
-### Advanced Configuration
+Klikom na ikonicu (avatar) u gornjem desnom uglu, otvara se padajući meni sa ključnim opcijama:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Account: Vodi na stranicu korisničkog profila gdje se mogu pregledati i uređivati detalji naloga.
+Log In: Omogućava korisnicima da se prijave ako nisu već ulogirani.
+Ovaj meni osigurava brz pristup ključnim funkcijama, pružajući jednostavno i pregledno korisničko iskustvo.
