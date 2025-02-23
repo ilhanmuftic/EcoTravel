@@ -8,32 +8,37 @@
   height: 45px;
   position: fixed;
   top: 0;
-  left: 0;  /* Ensure it starts at the left edge */
-  right: 0; /* Ensure it stretches to the right edge */
-  z-index: 1000; /* Keeps it above other content */
-  box-sizing: border-box; /* Prevents overflow issues */
+  left: 0;
+  /* Ensure it starts at the left edge */
+  right: 0;
+  /* Ensure it stretches to the right edge */
+  z-index: 1000;
+  /* Keeps it above other content */
+  box-sizing: border-box;
+  /* Prevents overflow issues */
   padding: 35px;
 }
-.fa-bars{
+
+.fa-bars {
   display: none;
 }
 
-.bars-dropdown{
+.bars-dropdown {
   display: none;
 }
 
 .navbar-title {
-  display: flex; 
+  display: flex;
   align-items: center;
   font-family: monospace;
   font-size: 28px;
-  color: white; 
+  color: white;
   text-decoration: none;
 }
 
 .navbar-logo-link {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   gap: 12px;
   text-decoration: none;
   color: white;
@@ -65,14 +70,14 @@
 }
 
 .navbar-links li:first-child a {
-  color: #ffffff !important; 
+  color: #ffffff !important;
 }
 
 .full-box-link {
-  display: flex; 
+  display: flex;
   padding: 5px 0px;
   text-decoration: none;
-  color: inherit; 
+  color: inherit;
   width: 100%;
   font-family: monospace;
   font-size: 20px;
@@ -80,12 +85,12 @@
 }
 
 .navbar-links li {
-  border-radius: 5px; 
+  border-radius: 5px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar-links li:hover {
-  background-color: #3c3c6e; 
+  background-color: #3c3c6e;
 }
 
 .navbar-links a:hover {
@@ -133,6 +138,7 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -191,10 +197,10 @@
 
 @media only screen and (max-width: 750px) {
 
-  .navbar-name{
+  .navbar-name {
     display: none;
   }
-  
+
   .navbar-logo-link {
     display: flex;
     justify-content: center;
@@ -253,6 +259,7 @@
       opacity: 0;
       transform: translateY(-10px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);

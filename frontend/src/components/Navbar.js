@@ -20,12 +20,12 @@ const Navbar = () => {
     <nav className="navbar">
       {/* Left Section: Logo and Title */}
       <div className="navbar-title">
-        <div className = "navbar-icons">
-        <FontAwesomeIcon
-          icon={faBars}
-          className="fa-bars"
-          onClick={toggleDropdown}
-        />
+        <div className="navbar-icons">
+          <FontAwesomeIcon
+            icon={faBars}
+            className="fa-bars"
+            onClick={toggleDropdown}
+          />
         </div>
         <a href="/" className="navbar-logo-link">
           <img src="/favicon.ico" alt="Logo" className="navbar-logo" />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef }  from "react";
+import React, { useState, useEffect, useRef } from "react";
 import StreetView from "./StreetView";
 import GuessMap from "./GuessMap";
 import ResultsPopup from "./ResultsPopup";
@@ -19,19 +19,19 @@ const Game = ({ }) => {
 
 
   useEffect(() => {
-  
-      const fetchLocation = async () => {
-        const randomLocation = await getRandomLocation(); // Await the result
-        setLocation(randomLocation); // Set it after the promise resolves
-      };
-  
-      if (!hasRun.current) {
-        fetchLocation()
-        hasRun.current = true;
-      }
-    }, []);
 
-    
+    const fetchLocation = async () => {
+      const randomLocation = await getRandomLocation(); // Await the result
+      setLocation(randomLocation); // Set it after the promise resolves
+    };
+
+    if (!hasRun.current) {
+      fetchLocation()
+      hasRun.current = true;
+    }
+  }, []);
+
+
 
   const handleGuessSubmit = async (guessCoords) => {
     const [lat, lng] = guessCoords;
@@ -46,10 +46,11 @@ const Game = ({ }) => {
 
     fetchWithAuth(`${API_URL}/api/score/`, {
       method: 'POST',
-      body: JSON.stringify({score}),      })
+      body: JSON.stringify({ score }),
+    })
     const currentLocation = await getRandomLocation();
     setLocation(currentLocation);
-    
+
   };
 
   const closeResults = () => {
@@ -58,7 +59,7 @@ const Game = ({ }) => {
 
   return (
     <div
-    
+
       style={{
         display: "flex",
         flexDirection: "row",
@@ -70,7 +71,7 @@ const Game = ({ }) => {
         padding: "20px",
         boxSizing: "border-box",
       }}
-      
+
     >
       <Navbar />
       {/* Left Side: Street View */}

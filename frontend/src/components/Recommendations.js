@@ -24,7 +24,7 @@ const Recommendations = () => {
         console.log(response)
         const data = await response.json()
         console.log('data', data)
-  
+
         setRecommendations(data); // Assuming the response is an array
 
       } catch (err) {
@@ -34,7 +34,7 @@ const Recommendations = () => {
         setLoading(false); // Set loading to false when data is fetched
       }
     };
-  
+
     fetchRecommendations();
   }, []); // Empty dependency array ensures this runs only once when the component mounts
 

@@ -24,7 +24,7 @@ const GuessMap = ({ onGuessSubmit }) => {
   };
 
   return (
-    
+
     <div style={{ height: "100%", width: "100%" }}>
       <MapContainer center={[43.9159, 17.6791]} zoom={7} style={{ height: "100%", width: "100%" }}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -43,8 +43,8 @@ const GuessMap = ({ onGuessSubmit }) => {
           cursor: "pointer",
           marginTop: "25px",
           width: "100%",
-          zIndex: 10 ,  // Add pointer cursor
-                marginHorizontal: 'auto'
+          zIndex: 10,  // Add pointer cursor
+          marginHorizontal: 'auto'
         }}
       >
         Guess

@@ -67,10 +67,10 @@ const PreviewLocation = () => {
 
       {/* Location dialog for city and location name */}
       {showDialog && (
-        <LocationDialog 
-          closeDialog={() => setShowDialog(false)} 
-          lat={lat} 
-          lng={lng} 
+        <LocationDialog
+          closeDialog={() => setShowDialog(false)}
+          lat={lat}
+          lng={lng}
         />
       )}
     </div>

@@ -30,25 +30,27 @@ const ResultsPopup = ({ show, onClose, guess, actual, score, location_id }) => {
     // const distance = getDistance({ lat: guess[0], lng: guess[1] }, actual);
 
 
-  const handleSubmit = async (star) => {
-    try {
-      const data = await fetchWithAuth(`${API_URL}/api/rate-location/`, {
-        method: 'POST',
-        body: JSON.stringify({
-            rating: star,
-            location: location_id, // Sending the location along with the rating
-          }),      });
+    const handleSubmit = async (star) => {
+        try {
+            const data = await fetchWithAuth(`${API_URL}/api/rate-location/`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    rating: star,
+                    location: location_id, // Sending the location along with the rating
+                }),
+            });
 
-          toast.success("Rating submitted successfully!");    } catch (error) {
+            toast.success("Rating submitted successfully!");
+        } catch (error) {
             toast.error("Something went wrong. Please try again.");
         }
-  };
+    };
 
     return (
         <div style={styles.popupContainer}>
             <div style={styles.popup}>
 
-            <div style={styles.map}>
+                <div style={styles.map}>
                     <MapContainer center={actual} zoom={7} style={{ height: '100%', width: '100%' }}>
                         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                         <Marker position={guess} icon={locationGuessIcon} />
@@ -60,28 +62,28 @@ const ResultsPopup = ({ show, onClose, guess, actual, score, location_id }) => {
                 {/* <p style={styles.text}>Distance: {distance.toFixed(2)} km</p> */}
 
                 {/* Star Rating System */}
-                { score>=4000?
-                <div style={styles.ratingContainer}>
-                    Eco Friendly Rating <br />
+                {score >= 4000 ?
+                    <div style={styles.ratingContainer}>
+                        Eco Friendly Rating <br />
 
-                    {[1, 2, 3, 4, 5].map((star) => (
-                        <span 
-                            key={star}
-                            style={{
-                                ...styles.star,
-                                color: star <= rating ? '#aaffaa' : '#555',
-                            }}
-                            onClick={() => {
-                                setRating(star); // Set the rating
-                                handleSubmit(star); // Immediately submit the rating
-                              }}                            
-                        >
-                            ★
-                        </span>
-                    ))}
+                        {[1, 2, 3, 4, 5].map((star) => (
+                            <span
+                                key={star}
+                                style={{
+                                    ...styles.star,
+                                    color: star <= rating ? '#aaffaa' : '#555',
+                                }}
+                                onClick={() => {
+                                    setRating(star); // Set the rating
+                                    handleSubmit(star); // Immediately submit the rating
+                                }}
+                            >
+                                ★
+                            </span>
+                        ))}
 
-             
-            </div> : null} 
+
+                    </div> : null}
 
                 <button style={styles.closeButton} onClick={onClose}>
                     Close

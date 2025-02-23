@@ -42,7 +42,7 @@ const LocationDialog = ({ closeDialog, lat, lng }) => {
     <div style={styles.overlay}>
       <div style={styles.dialog}>
         <h3 style={styles.header}>Enter City and Location Name</h3>
-        
+
         <div style={styles.inputGroup}>
           <label style={styles.label}>City Name:</label>
           <input

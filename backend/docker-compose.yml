@@ -3,35 +3,35 @@ version: "3.8"
 services:
   backend:
     build:
-      context: .  # Path to your backend directory
-    command: python manage.py runserver 0.0.0.0:8000  # Run Django server with auto-reload
+      context: . # Path to your backend directory
+    command: python manage.py runserver 0.0.0.0:8000 # Run Django server with auto-reload
     volumes:
-      - .:/app  # Mount the current directory to /app inside the container
+      - .:/app # Mount the current directory to /app inside the container
     ports:
       - "8000:8000"
     depends_on:
       - db
     environment:
-        - DB_NAME=${DB_NAME}       # Uses DB_NAME from .env
-        - DB_USER=${DB_USER}       # Uses DB_USER from .env
-        - DB_PASSWORD=${DB_PASSWORD}  # Uses DB_PASSWORD from .env
-        - DB_HOST=${DB_HOST}       # Uses DB_HOST from .env
-        - DB_PORT=${DB_PORT}       # Uses DB_PORT from .env
+      - DB_NAME=${DB_NAME} # Uses DB_NAME from .env
+      - DB_USER=${DB_USER} # Uses DB_USER from .env
+      - DB_PASSWORD=${DB_PASSWORD} # Uses DB_PASSWORD from .env
+      - DB_HOST=${DB_HOST} # Uses DB_HOST from .env
+      - DB_PORT=${DB_PORT} # Uses DB_PORT from .env
     networks:
       - ecotravel-network
 
   db:
     image: postgres:13
     environment:
-      - POSTGRES_DB=${DB_NAME}       # Uses DB_NAME from .env
-      - POSTGRES_USER=${DB_USER}     # Uses DB_USER from .env
-      - POSTGRES_PASSWORD=${DB_PASSWORD}  # Uses DB_PASSWORD from .env
+      - POSTGRES_DB=${DB_NAME} # Uses DB_NAME from .env
+      - POSTGRES_USER=${DB_USER} # Uses DB_USER from .env
+      - POSTGRES_PASSWORD=${DB_PASSWORD} # Uses DB_PASSWORD from .env
     volumes:
       - db-data:/var/lib/postgresql/data
     networks:
       - ecotravel-network
     ports:
-      - "5432:5432"  # Expose the database to the host
+      - "5432:5432" # Expose the database to the host
 
 networks:
   ecotravel-network:
