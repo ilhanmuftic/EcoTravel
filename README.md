@@ -49,8 +49,8 @@ Aplikacija je **deployovana** na **DigitalOcean** server sa IP adresom:
 
 Za rutiranje zahteva koristi se **Nginx** kao **reverse proxy**:  
 
-📌 **Zahtevi ka `/api/`** → Prosleđuju se **backend servisu**  
-📌 **Zahtevi za frontendom** → Služe se direktno iz React build-a  
+📌 **Zahtjevi ka `/api/`** → Prosleđuju se **backend servisu**  
+📌 **Zahtjevi za frontendom** → Služe se direktno iz React build-a  
 
 ---
 
@@ -113,5 +113,8 @@ Aplikacija koristi **Django REST Framework** za backend API. Svi API-jevi su dok
 - `GET /user-profile/` → Pregled korisničkog profila  
 
 ---
+
+### **🌍 Google Street View Integracija**
+Aplikacija koristi Google Maps API za prikaz Street View panoramskih pregleda lokacija. 
 
 📌 **Tim EcoTravel** 🚀
