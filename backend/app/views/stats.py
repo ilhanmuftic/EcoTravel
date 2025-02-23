@@ -2,7 +2,7 @@
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
-from app.models import Score
+from app.models import Score, LocationRating
 from rest_framework.views import APIView
 from app.serializers.score import ScoreSerializer, RatingSerializer
 from django.db.models import Sum
@@ -53,13 +53,28 @@ class LeaderboardView(APIView):
         return Response(top_players, status=status.HTTP_200_OK)
     
 
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
+
 class PostRatingView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        serializer = RatingSerializer(data=request.data, context={'request': request})
-        if serializer.is_valid():
-            serializer.save(user=request.user)  # Automatically use the authenticated user
-            return Response({"detail": "Rating submitted successfully."}, status=status.HTTP_201_CREATED)
+        user = request.user
+        location_id = request.data.get('location')  # Assuming location_id is provided in the request
+        rating_value = request.data.get('rating')  # Assuming rating value is provided in the request
 
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        # Use update_or_create to either update the existing rating or create a new one
+        rating, created = LocationRating.objects.update_or_create(
+            user=user, 
+            location_id=location_id,  # Matching user and location
+            defaults={'rating': rating_value}  # If found, update the rating value
+        )
+
+        # Respond with different messages based on whether it's an update or creation
+        if created:
+            return Response({"detail": "Rating submitted successfully."}, status=status.HTTP_201_CREATED)
+        else:
+            return Response({"detail": "Rating updated successfully."}, status=status.HTTP_200_OK)

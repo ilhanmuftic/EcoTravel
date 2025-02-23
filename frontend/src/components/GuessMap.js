@@ -47,7 +47,7 @@ const GuessMap = ({ onGuessSubmit }) => {
                 marginHorizontal: 'auto'
         }}
       >
-        Submit Guess
+        Guess
       </button>
     </div>
   );
